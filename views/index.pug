@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro 
+    h1 My Portfolio 
+ 
+    p This portfolio is a marketing document meant to demonstrate my myriad skills, including, but not limited to: web development, soft skills, lifelong learning, technical prowess, and the ability to use the word “myriad” correctly in a sentence. Am I hired?
+
+
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+
+      each project in projects
+        .cell
+          a(href=`/projects/${project.id}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt=`${project.project_name}`)
+            h5= project.project_name
